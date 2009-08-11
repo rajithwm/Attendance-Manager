@@ -1,0 +1,15 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h1>Attendance Sheet</h1>
+<br/>
+<% form_for(@attendance,:url=>{:action=>'create'}) do |f| %>
+<p>
+  <b>Emp ID : </b><%= f.text_field :EmpId %><br/>
+</p>
+<p><b>Entry Time </b><%= f.datetime_select  :Entry_Timestamp %> </p>
+
+  <p><%= f.submit 'Create' %></p>
+<% end %>

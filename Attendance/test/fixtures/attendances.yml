@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  EmpId: MyString
+  Entry_Timestamp: 2009-08-11 18:58:21
+  date_dim_id: 1
+
+two:
+  EmpId: MyString
+  Entry_Timestamp: 2009-08-11 18:58:21
+  date_dim_id: 1

@@ -1,0 +1,234 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (109.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAttendances (20090812015821)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE TABLE "attendances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "EmpId" varchar(255), "Entry_Timestamp" datetime, "date_dim_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090812015821')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("attendances")[0m
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:04:32) [GET]
+Rendering attendances/new
+Completed in 2375ms (View: 2360, DB: 0) | 200 OK [http://localhost/attendances/new]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:04:41) [GET]
+  [4;36;1mAttendance Load (0.0ms)[0m   [0;1mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/attendances/]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:04:44) [GET]
+  [4;35;1mAttendance Load (0.0ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/attendances/]
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:04:50) [GET]
+Rendering attendances/new
+Completed in 32ms (View: 16, DB: 0) | 200 OK [http://localhost/attendances/new]
+
+
+Processing AttendancesController#create (for 127.0.0.1 at 2009-08-11 19:05:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"rmXzZU04j2RgIT/kTXC6OenGamObzZtglUbskZYhtQo=", "attendance"=>{"Entry_Timestamp(1i)"=>"2009", "Entry_Timestamp(2i)"=>"8", "Entry_Timestamp(3i)"=>"11", "Entry_Timestamp(4i)"=>"07", "EmpId"=>"Rajith`", "Entry_Timestamp(5i)"=>"16"}}
+  [4;36;1mAttendance Create (0.0ms)[0m   [0;1mINSERT INTO "attendances" ("updated_at", "Entry_Timestamp", "EmpId", "date_dim_id", "created_at") VALUES('2009-08-12 02:05:14', '2009-08-11 07:16:00', 'Rajith`', NULL, '2009-08-12 02:05:14')[0m
+Redirected to http://localhost:3001/attendances
+Completed in 188ms (DB: 0) | 302 Found [http://localhost/attendances/create]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:05:14) [GET]
+  [4;35;1mAttendance Load (0.0ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:06:21) [GET]
+  [4;36;1mAttendance Load (0.0ms)[0m   [0;1mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-11 19:06:25) [GET]
+
+ActionController::RoutingError (No route matches "/attendance/new" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-11 19:06:50) [GET]
+
+ActionController::RoutingError (No route matches "/attendance/new" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:06:55) [GET]
+  [4;35;1mAttendance Load (0.0ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 94ms (View: 63, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:06:57) [GET]
+Rendering attendances/new
+Completed in 188ms (View: 156, DB: 0) | 200 OK [http://localhost/attendances/new]
+
+
+Processing AttendancesController#create (for 127.0.0.1 at 2009-08-11 19:18:05) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"rmXzZU04j2RgIT/kTXC6OenGamObzZtglUbskZYhtQo=", "attendance"=>{"Entry_Timestamp(1i)"=>"2009", "Entry_Timestamp(2i)"=>"8", "Entry_Timestamp(3i)"=>"12", "Entry_Timestamp(4i)"=>"02", "EmpId"=>"Prasanna", "Entry_Timestamp(5i)"=>"06"}}
+  [4;36;1mAttendance Create (0.0ms)[0m   [0;1mINSERT INTO "attendances" ("updated_at", "Entry_Timestamp", "EmpId", "date_dim_id", "created_at") VALUES('2009-08-12 02:18:05', '2009-08-12 02:06:00', 'Prasanna', NULL, '2009-08-12 02:18:05')[0m
+Redirected to http://localhost:3001/attendances
+Completed in 657ms (DB: 0) | 302 Found [http://localhost/attendances/create]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:18:06) [GET]
+  [4;35;1mAttendance Load (0.0ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:18:08) [GET]
+Filter chain halted as [:check_add] rendered_or_redirected.
+Completed in 16ms (View: 16, DB: 0) | 401 Unauthorized [http://localhost/attendances/new]
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:18:21) [GET]
+Filter chain halted as [:check_add] rendered_or_redirected.
+Completed in 16ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/attendances/new]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:18:30) [GET]
+  [4;36;1mAttendance Load (0.0ms)[0m   [0;1mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 47ms (View: 0, DB: 0) | 200 OK [http://localhost/attendances/]
+
+
+Processing AttendancesController#attendances (for 127.0.0.1 at 2009-08-11 19:18:37) [GET]
+  Parameters: {"id"=>"new"}
+
+ActionController::UnknownAction (No action responded to attendances. Actions: create, index, and new):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:18:58) [GET]
+Filter chain halted as [:check_add] rendered_or_redirected.
+Completed in 0ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/attendances/new]
+
+
+Processing AttendancesController#index (for 127.0.0.1 at 2009-08-11 19:19:26) [GET]
+  [4;35;1mAttendance Load (0.0ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 156ms (View: 109, DB: 0) | 200 OK [http://localhost/attendances/]
+
+
+Processing AttendancesController#new (for 127.0.0.1 at 2009-08-11 19:19:29) [GET]
+Filter chain halted as [:check_add] rendered_or_redirected.
+Completed in 0ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/attendances/new]
+
+
+Processing Rails::InfoController#properties (for ::ffff:127.0.0.1 at 2009-08-11 19:37:02) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 59ms (View: 4, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing AttendancesController#index (for ::ffff:127.0.0.1 at 2009-08-11 19:37:07) [GET]
+  [4;36;1mAttendance Load (0.5ms)[0m   [0;1mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 73ms (View: 70, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing ApplicationController#index (for ::ffff:127.0.0.1 at 2009-08-11 19:37:11) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for ::ffff:127.0.0.1 at 2009-08-11 19:37:19) [GET]
+
+ActionController::RoutingError (No route matches "/new" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing AttendancesController#index (for ::ffff:127.0.0.1 at 2009-08-11 19:38:41) [GET]
+  [4;35;1mAttendance Load (0.5ms)[0m   [0mSELECT * FROM "attendances" [0m
+Rendering attendances/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/attendances]
+
+
+Processing AttendancesController#new (for ::ffff:127.0.0.1 at 2009-08-11 19:38:43) [GET]
+Filter chain halted as [:check_add] rendered_or_redirected.
+Completed in 0ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/attendances/new]
