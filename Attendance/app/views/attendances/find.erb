@@ -1,0 +1,17 @@
+<html>
+  <title>Attendance Sheet</title>
+  <h1><%= @date  %>  Attendance Sheet</h1>
+
+  <table>
+<% for attendance in @attendances %>
+    <tr>
+      <td><%= attendance.EmpId %></td>
+      <td><%= attendance.Entry_Timestamp %></td>
+    </tr>
+  <% end %>
+  </table>
+<br/>
+<a href="/attendances"> Back </a>
+</html>
+
+
