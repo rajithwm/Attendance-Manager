@@ -1,6 +1,12 @@
 <html>
   <title>Attendance Sheet</title>
-<h1>Today Attendance Sheet</h1>
+  <h1><%= @date  %>  Attendance Sheet</h1>
+<span style="text-align:right">
+  <% form_tag "/attendances/find" do %>
+    <%= text_field_tag :date  %>
+  <%= submit_tag "Find Date YYYY/MM/DD"  %>
+  <% end %>
+</span>
   <table>
 <% for attendance in @attendances %>
     <tr>
@@ -10,5 +16,5 @@
   <% end %>
   </table>
 <br/>
-<a href="new">Add Attendance</a> | <a href="">Weekly Report</a>
+<a href="/attendances/new">Add Attendance</a> | <a href="">Weekly Report</a>
 </html>

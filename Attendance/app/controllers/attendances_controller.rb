@@ -5,13 +5,22 @@ class AttendancesController < ApplicationController
   end
 
   def index
-    @attendances = Attendance.find(:all)
+    @date = Date.new(Time.now.year, Time.now.month, Time.now.day)
+    @attendances = Attendance.find(:all, :conditions=>['Entry_timestamp > ?', @date])
   end
 
   def create
     @attendance = Attendance.new(params[:attendance])
     @attendance.save
     redirect_to "/attendances"
+  end
+
+  def find
+    newDae = Date.new(ParseDate.parsedate(params[:date])[0],ParseDate.parsedate(params[:date])[1],ParseDate.parsedate(params[:date])[2])
+    afterOneDate = newDae + 1
+    @date = newDae
+    @attendances = Attendance.find(:all, :conditions=>['Entry_timestamp > ? and Entry_timestamp < ?', newDae, afterOneDate])
+
   end
 
   private
